@@ -109,7 +109,7 @@ async def on_ready():
     if config['sync_commands']:
         bot_content += '''@bot.tree.command(name="ping", description="Check bot latency")
 async def ping(interaction: discord.Interaction):
-    await interaction.response.send_message(f"Pong! {{round(bot.latency*1000)}}ms")
+    await interaction.response.send_message(f"Pong! {round(bot.latency*1000)}ms")
 
 '''
 
