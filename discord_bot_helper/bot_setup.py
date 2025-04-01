@@ -11,12 +11,6 @@ class DiscordBotHelper(commands.Bot):
     
     def __init__(
         self,
-<<<<<<< HEAD
-        command_prefix: str = "!",
-        intents: discord.Intents = discord.Intents.default(),
-        *args, **kwargs
-    ):
-=======
         command_prefix: Optional[str] = None,
         intents: Optional[discord.Intents] = None,
         *args, **kwargs
@@ -32,32 +26,11 @@ class DiscordBotHelper(commands.Bot):
         # Use config prefix if not provided
         command_prefix = command_prefix or self._pre_config.get('prefix', '!')
         
->>>>>>> 60c585b (Pushing changes!)
         super().__init__(
             command_prefix=command_prefix,
             intents=intents,
             *args, **kwargs
         )
-<<<<<<< HEAD
-        self.config = self._load_config()
-        self.logger = self._setup_logging()
-        self._validate_config()
-
-    def _load_config(self) -> dict:
-        """Load configuration from available sources"""
-        if os.path.exists('config.json'):
-            with open('config.json') as f:
-                return json.load(f)
-            
-        load_dotenv()
-        return {
-            'token': os.getenv('DISCORD_TOKEN'),
-            'prefix': os.getenv('PREFIX'),
-            'owner_id': os.getenv('OWNER_ID'),
-            'sync_commands': os.getenv('SYNC_COMMANDS', 'false').lower() == 'true',
-            'use_cogs': os.getenv('USE_COGS', 'false').lower() == 'true'
-        }
-=======
         
         # Complete initialization
         self.config = self._validate_config()
@@ -88,7 +61,6 @@ class DiscordBotHelper(commands.Bot):
         if not full_config.get('token'):
             raise ValueError("No bot token found in configuration!")
         return full_config
->>>>>>> 60c585b (Pushing changes!)
 
     def _setup_logging(self) -> logging.Logger:
         """Configure logging system"""
@@ -103,14 +75,6 @@ class DiscordBotHelper(commands.Bot):
         )
         return logging.getLogger('DBH')
 
-<<<<<<< HEAD
-    def _validate_config(self):
-        """Validate essential configuration"""
-        if not self.config.get('token'):
-            raise ValueError("No bot token found in configuration!")
-
-=======
->>>>>>> 60c585b (Pushing changes!)
     async def setup_hook(self) -> None:
         """Post-initialization setup"""
         self.logger.info("Starting bot initialization...")
@@ -120,15 +84,11 @@ class DiscordBotHelper(commands.Bot):
             
         if self.config.get('sync_commands'):
             self.logger.info("Syncing application commands...")
-<<<<<<< HEAD
-            await self.tree.sync()
-=======
             try:
                 synced = await self.tree.sync()
                 self.logger.info(f"Synced {len(synced)} commands")
             except Exception as e:
                 self.logger.error(f"Command sync failed: {str(e)}")
->>>>>>> 60c585b (Pushing changes!)
 
     async def load_cogs(self, cog_dir: str = 'cogs') -> None:
         """Load all cogs from directory"""

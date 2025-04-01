@@ -14,8 +14,4 @@ def main():
     setup_config()
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     main()
-=======
-    main()
->>>>>>> 60c585b (Pushing changes!)
