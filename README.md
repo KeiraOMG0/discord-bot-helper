@@ -45,6 +45,7 @@ Run Your Bot:
 `python bot.py`
 Command Types 📜
 Slash Commands (Recommended)
+
 ```py
 from discord import app_commands
 
@@ -59,7 +60,7 @@ Prefix Commands (Legacy)
 @bot.command()
 async def ping(ctx):
     await ctx.send(f"Pong! {round(bot.latency*1000)}ms")
-    ```
+```
 Cog System 🧩
 Create cogs/moderation.py:
 
@@ -85,7 +86,7 @@ async def setup(bot: commands.Bot):
 
 Cogs automatically load when:
 
-Placed in `cogs/`` directory
+Placed in `cogs/` directory
 
 `use_cogs` enabled in config
 
