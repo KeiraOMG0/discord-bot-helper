@@ -30,7 +30,7 @@ Create `bot.py`:
 
 ```py
 from discord_bot_helper import DiscordBotHelper
-
+import discord
 bot = DiscordBotHelper()
 
 @bot.tree.command(name="ping", description="Check bot latency")
