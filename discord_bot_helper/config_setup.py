@@ -33,7 +33,9 @@ def setup_config():
 
     # Optional fields
     config['owner_id'] = input("➤ Enter owner ID (optional): ").strip()
+    print("Enable slash command syncing to use slash commands")
     config['sync_commands'] = input("➤ Enable slash command syncing? (Y/n): ").lower() in ['y', '']
+    print("To use cogs make sure you enable loading")
     config['use_cogs'] = input("➤ Use cog system? (Y/n): ").lower() in ['y', '']
 
     # File creation
