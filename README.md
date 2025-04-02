@@ -3,7 +3,7 @@
 
 A modern Python library for building Discord bots with slash commands and automatic configuration.
 
-![Python Version](https://img.shields.io/badge/python-3.8+-blue)
+![Python Version](https://img.shields.io/badge/python-3.9+-blue)
 ![Discord.py Version](https://img.shields.io/badge/discord.py-2.3+-blue)
 
 ## Features ✨
