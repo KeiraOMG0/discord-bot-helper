@@ -1,5 +1,8 @@
 from setuptools import setup, find_packages
 
+with open('README.md', encoding='utf-8') as f:
+    long_description = f.read()
+
 setup(
     name="discord-bot-helper",
     version="1.0.0",
@@ -15,7 +18,7 @@ setup(
     },
     author="Keira",
     description="Discord Bot Setup Assistant",
-    long_description=open('README.md').read(),
+    long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/KeiraOMG0/discord-bot-helper",
     classifiers=[
